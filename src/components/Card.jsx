@@ -8,10 +8,12 @@ const Card = () => {
     <div className="card">
       <div className="number">#61 Advice</div>
       <div className="advice">Text of advice </div>
-      <img src={patternDivider} alt="divider image" />
-      <button>
-        <img src={iconDice} alt="dice icon image" />
-      </button>
+      <div className="wrapper">
+        <img src={patternDivider} alt="divider image" />
+        <button>
+          <img src={iconDice} alt="dice icon image" />
+        </button>
+      </div>
     </div>
   );
 };

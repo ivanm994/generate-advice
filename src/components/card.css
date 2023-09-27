@@ -35,3 +35,10 @@
   color: var(--light-cyan);
   padding-block: 20px;
 }
+
+.wrapper {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
