@@ -1,7 +1,9 @@
+import Card from "./components/Card";
+
 function App() {
   return (
     <div>
-      <h1>Hello react</h1>
+      <Card />
     </div>
   );
 }
