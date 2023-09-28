@@ -6,22 +6,28 @@ import { useState, useEffect } from "react";
 
 const Card = () => {
   const URL = "https://api.adviceslip.com/advice";
-  const [content, setContent] = useState(null);
+  const [content, setContent] = useState([]);
 
   useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
     fetch(URL)
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        setContent(data.slip);
+      })
       .catch((err) => console.error(err));
-  }, []);
+  };
 
   return (
     <div className="card">
-      <div className="number">#61 Advice</div>
-      <div className="advice">Text of advice </div>
+      <div className="number">{content.id}</div>
+      <div className="advice">{content.advice} </div>
       <div className="wrapper">
         <img src={patternDivider} alt="divider image" />
-        <button>
+        <button onClick={fetchData}>
           <img src={iconDice} alt="dice icon image" />
         </button>
       </div>
